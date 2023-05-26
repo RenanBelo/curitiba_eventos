@@ -1,0 +1,52 @@
+[
+    {
+        "nome_evento": "ALOJA DAS ARTES - CIA 2023",
+        "data_horario": "02 de março • 12:00 até 06 de junho • 23:30",
+        "endereco_local": "UBERABA - MG - Uberaba / Minas Gerais"
+    },
+    {
+        "nome_evento": "INTERMED DF 2023",
+        "data_horario": "13 de março • 12:00 até 26 de maio • 23:59",
+        "endereco_local": "Em breve - Araguari / Minas Gerais"
+    },
+    {
+        "nome_evento": "BUSÃO DAS ARTES - CIA 2023",
+        "data_horario": "14 de março • 18:00 até 06 de junho • 12:00",
+        "endereco_local": "UBERABA - MG - Uberlândia / Minas Gerais"
+    },
+    {
+        "nome_evento": "ÔNIBUS INTERMED DF 2023",
+        "data_horario": "23 de março • 17:00 até 06 de junho • 12:35",
+        "endereco_local": ". - Brasília / Distrito Federal"
+    },
+    {
+        "nome_evento": "ÔNIBUS CIA",
+        "data_horario": "26 de março • 15:15 até 08 de junho • 15:15",
+        "endereco_local": "Uberlândia - Uberlândia / Minas Gerais"
+    },
+    {
+        "nome_evento": "TRANSLADO CIA 2023",
+        "data_horario": "05 de abril • 15:45 até 23 de junho • 15:33",
+        "endereco_local": "Uberaba - Goiânia / Goiás"
+    },
+    {
+        "nome_evento": "PREDASSOCIAÇÃO",
+        "data_horario": "11 de abril • 23:10 até 20 de julho • 22:59",
+        "endereco_local": "Predadora - Uberlândia / Minas Gerais"
+    },
+    {
+        "nome_evento": "RIFA DO ATLETA",
+        "data_horario": "15 de abril • 08:14 até 30 de junho • 22:14",
+        "endereco_local": "Uberaba - Goiânia / Goiás"
+    },
+    {
+        "nome_evento": "UNIVERSIPRAIA 2023 - VIRA COPOS UTP",
+        "data_horario": "18 de abril • 17:15 até 05 de novembro • 20:00",
+        "endereco_local": "Praia do Mar Grosso - Laguna / Santa Catarina"
+    },
+    {
+        "nome_evento": "CINEMA",
+        "data_horario": "28 de abril • 18:00 até 26 de maio • 20:40",
+        "endereco_local": "faculdade anhanguera - Goiânia / Goiás"
+    }
+]

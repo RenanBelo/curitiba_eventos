@@ -2,13 +2,14 @@ import json
 import openai
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import speech_recognition as sr
 
 # Carrega os dados do arquivo JSON
 with open('eventos_teste.json', encoding="utf-8") as file:
     eventos_data = json.loads(file.read())
 
 # Configuração da API da OpenAI
-openai.api_key = "SUA_CHAVE_API"
+openai.api_key = "SUA_CHAVE"
 
 # Inicialização do servidor Flask
 app = Flask(__name__)
@@ -16,10 +17,16 @@ CORS(app)  # Adicione esta linha para habilitar o CORS
 
 # Histórico inicial vazio
 historico = []
+eventos = eventos_data.copy()  # Cópia dos eventos do JSON
 
 # Função para calcular o número de tokens em uma lista de mensagens
 def calcular_numero_tokens(mensagens):
     return sum(len(msg['content'].split()) for msg in mensagens)
+
+# Rota para obter a lista de eventos
+@app.route('/eventos', methods=['GET'])
+def obter_eventos():
+    return jsonify(eventos)
 
 # Rota para lidar com as perguntas sobre eventos
 @app.route('/pergunta-evento', methods=['POST'])
@@ -27,7 +34,6 @@ def pergunta_evento():
     pergunta = request.json['pergunta']
 
     # Adiciona a pergunta ao histórico
-    # Adiciona a pergunta atual ao histórico
     historico.append({"role": "user", "content": pergunta})
 
     # Calcula o número de tokens utilizados no histórico atual
@@ -38,9 +44,6 @@ def pergunta_evento():
     while num_tokens_historico > limite_tokens:
         primeira_mensagem = historico.pop(0)
         num_tokens_historico = calcular_numero_tokens(historico)
-
-    # Cria uma cópia dos eventos do JSON
-    eventos = eventos_data.copy()
 
     # Realiza a chamada à API do ChatGPT com o histórico completo e os eventos
     resposta = openai.ChatCompletion.create(
@@ -59,19 +62,3 @@ def pergunta_evento():
 # Execução do servidor Flask
 if __name__ == '__main__':
     app.run()
-
-##teste no postman
-## http://localhost:5000/pergunta-evento
-
-## pergunta teste
-
-##    {
- ##   "pergunta": "quais os eventos?"
- ##     }
-##
-##
-##
-##
-##
-##
-##
